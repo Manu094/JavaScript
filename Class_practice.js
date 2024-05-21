@@ -119,7 +119,7 @@ class Media {
     get songs() {
       return this._songs;
     }
-    // shuffle accepts an optional user input to specify the length of the playlist, else it shuffles every song. 
+    // shuffle accepts an optional user input to specify the length of the destination playlist, else it shuffles the whole album. 
     shuffle(length = this.songs.length) {
       // It first checks if the album has 2 or more songs.
       if (this.songs.length < 2) {
@@ -153,6 +153,13 @@ class Media {
   
   const lion = new CD('Elevation', 'Lion', ['1 - Lion', '2 - Same God', '3 - Graves into Gardens', '4 - What I See', '5 - Dancing', '6 - Welcome Resurrection', '7 - Forever YHWH'], 25);
   lion.addRating(4);
+
+  console.log(lion.shuffle(4));
+
+
+  const choice = new CD('Me', 'Choice to Live', ['ctl', 'boat'], 5);
   
-  console.log(lion.shuffle());
-  
+console.log(choice.shuffle(1));
+
+
+// TODO: I should replace my if elif else by a switch
